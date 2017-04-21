@@ -1,0 +1,2 @@
+* * * * * root echo "Hello cron  world" >> /var/log/cron.log 2>&1
+*/2 * * * * root /usr/bin/chef-client	>> /var/log/cron-chef-client.log 2>&1
