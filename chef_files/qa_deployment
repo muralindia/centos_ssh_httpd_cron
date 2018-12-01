@@ -1,0 +1,22 @@
+chef_type:           environment
+cookbook_versions:
+default_attributes:
+  Cron_dynamic:
+    cron_default: 0 */4 * * *
+  apache:
+    list_p:
+      12
+      123
+  eatable:
+    items:
+      chocolate
+      cake
+      banana
+      chips
+      onion
+      mango
+      orange
+description:         
+json_class:          Chef::Environment
+name:                qa_deployment
+override_attributes:
