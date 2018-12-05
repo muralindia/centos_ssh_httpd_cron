@@ -1,4 +1,11 @@
 
+knife data bag create gitab password
+
+{
+    "id": "password",
+    "cred": "Gitlpass34"
+  }
+
 knife data bag edit gitab password
 
 
@@ -14,6 +21,13 @@ knife data bag edit gitab password
 }
 
 -------------------------------------------
+### cookbook recipe path
+
+vi test_gitlab_auth.rb
+
+#####
+## Cookbook to test gitlab private repo access using chef
+####
 
 cred_data =  Chef::DataBagItem.load('gitab','password')
 
