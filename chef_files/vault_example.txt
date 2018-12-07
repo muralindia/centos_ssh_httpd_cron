@@ -37,3 +37,29 @@ git '/opt/mysources/gitlabA' do
     action :sync
 end
 
+
+##### command to display vault contents using data bag
+
+# knife data bag show secret3 gitlabp
+WARNING: Encrypted data bag detected, but no secret provided for decoding. Displaying encrypted data.
+id:    gitlabp
+passw:
+  auth_tag:       XNaPix75yg+qKwh3nDibbA==
+
+  cipher:         aes-256-gcm
+  encrypted_data: lZDVXdjs7hFYMfYZksjOwCy2BrTiFcyUFoVE
+
+  iv:             +86VVmDp/TcRyTaj
+
+  version:        3
+
+##### command to display vault contents using vault 
+
+ knife vault show secret3 gitlabp --mode client
+id:    gitlabp
+passw: Gitlpass344
+
+################
+
+
+
