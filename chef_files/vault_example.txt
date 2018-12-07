@@ -61,5 +61,6 @@ passw: Gitlpass344
 
 ################
 
+Lev:https://shadow-soft.com/using-chef-hashicorp-vault-for-secrets-management/
 
 
