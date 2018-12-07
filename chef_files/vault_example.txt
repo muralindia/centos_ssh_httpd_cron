@@ -1,0 +1,39 @@
+
+root@ubuntu1:/opt/chef-repo/.chef# ls
+knife.rb  stevedanno.pem  syntaxcache  trusted_certs
+
+The user stevedanno has been used in creating the vault
+
+# knife vault create secret3 gitlabp  --admins "stevedanno" --search "*:*" --mode client
+
+The above command prompt for json edit
+
+{
+"id": "gitlabp",
+"passw": "Gitlpass344"
+}
+
+In receipe
+
+chef_gem "chef-vault"
+require 'chef-vault'
+
+item1 = ChefVault::Item.load("secret3","gitlabp")
+itemp1 = item1["passw"]
+
+bash "create directory" do
+  code <<-EOH
+    mkdir -p /opt/mysources/gitlabA
+    EOH
+end
+
+file "/opt/passwd_testv" do
+  content "#{itemp1}"
+end
+
+git '/opt/mysources/gitlabA' do
+    repository "https://rajagithub:#{itemp1}@gitlab.com/muralindia/chef_git_test.git"
+    revision 'master'
+    action :sync
+end
+
