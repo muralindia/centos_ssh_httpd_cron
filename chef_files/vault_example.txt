@@ -13,6 +13,12 @@ The above command prompt for json edit
 "passw": "Gitlpass344"
 }
 
+alternate way
+
+# knife vault create vault_prod dev_secretsp --json data_bags/dev-secretsp.json --search "name:whitewalker_node_1"
+
+The above command creates vault_prod folder inside data_bags which contains the encrypted data of dev-secretsp.json
+
 In receipe
 
 chef_gem "chef-vault"
